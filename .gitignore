@@ -7,6 +7,7 @@ dist-ssr
 .env.*.local
 *.log
 *.tsbuildinfo
+cbd-digiskills-live-bundle.zip
 .DS_Store
 Thumbs.db
 .vscode/*
