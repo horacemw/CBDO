@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="CBDOS mark">
+  <g transform="translate(6 6)">
+    <circle cx="30" cy="30" r="28" fill="none" stroke="#111" stroke-width="3"/>
+    <path d="M30 6 A24 24 0 0 1 54 30" fill="none" stroke="#0EA5B7" stroke-width="4" stroke-linecap="round"/>
+    <path d="M54 30 A24 24 0 0 1 30 54" fill="none" stroke="#13366A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M30 54 A24 24 0 0 1 6 30" fill="none" stroke="#C8321D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M6 30 A24 24 0 0 1 30 6" fill="none" stroke="#8CC63F" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="30" cy="30" r="12" fill="none" stroke="#138A36" stroke-width="2"/>
+    <circle cx="30" cy="30" r="7" fill="#138A36"/>
+  </g>
+</svg>

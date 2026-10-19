@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" role="img" aria-label="CBDOS Coalition logo">
+  <style>
+    .mark-ring{fill:none;stroke:#fff;stroke-width:3}
+    .mark-arc{fill:none;stroke-width:4;stroke-linecap:round}
+    .arc-cyan{stroke:#5BD3E2}
+    .arc-navy{stroke:#7B9BD1}
+    .arc-red{stroke:#F0735E}
+    .arc-lime{stroke:#B5E07A}
+    .dot{fill:#4CC46E}
+    .wordmark{fill:#fff;font:700 22px Poppins, Arial, sans-serif;letter-spacing:0.5px}
+    .tag{fill:#CFCFCB;font:500 9px Poppins, Arial, sans-serif;letter-spacing:2.4px}
+  </style>
+  <g transform="translate(6 6)">
+    <circle cx="30" cy="30" r="28" class="mark-ring" />
+    <path d="M30 6 A24 24 0 0 1 54 30" class="mark-arc arc-cyan" />
+    <path d="M54 30 A24 24 0 0 1 30 54" class="mark-arc arc-navy" />
+    <path d="M30 54 A24 24 0 0 1 6 30" class="mark-arc arc-red" />
+    <path d="M6 30 A24 24 0 0 1 30 6" class="mark-arc arc-lime" />
+    <circle cx="30" cy="30" r="7" class="dot" />
+    <circle cx="30" cy="30" r="12" fill="none" stroke="#4CC46E" stroke-width="2" />
+  </g>
+  <g transform="translate(78 32)">
+    <text class="wordmark" x="0" y="0">CBDOS</text>
+    <text class="tag" x="2" y="18">COALITION FOR HUMAN RIGHTS &amp; GOOD GOVERNANCE</text>
+  </g>
+</svg>

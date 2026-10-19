@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --header-height: 128px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+  body {
+    @apply bg-paper-soft text-text font-sans antialiased;
+    font-feature-settings: "kern", "liga", "calt", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: #138a36;
+    color: #ffffff;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans text-ink;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl font-semibold leading-tight;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    @apply text-2xl md:text-4xl font-semibold leading-tight;
+    letter-spacing: -0.015em;
+  }
+  h3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  p {
+    @apply text-text leading-relaxed;
+  }
+  /* Anchors inherit their parent's colour so they read correctly on both
+     light and dark surfaces. Specific link styles override this via classes
+     like .link-inline, .btn-primary, etc. */
+  a {
+    color: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid #138a36;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply absolute left-4 top-4 z-[100] -translate-y-[200%] bg-ink text-paper px-4 py-2 text-sm font-medium rounded-sm transition-transform;
+  }
+  .skip-link:focus-visible {
+    @apply translate-y-0;
+  }
+  .link-inline {
+    @apply underline underline-offset-4 decoration-border-strong hover:decoration-brand-green hover:text-brand-green transition-colors;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand-green;
+  }
+  .eyebrow-dark {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-text-muted;
+  }
+  .section {
+    @apply py-14 md:py-20;
+  }
+  .section-tight {
+    @apply py-10 md:py-14;
+  }
+  .rule {
+    @apply h-px w-16 bg-ink;
+  }
+  .card-plain {
+    @apply bg-paper border border-border rounded transition-colors;
+  }
+  .card-plain:hover {
+    @apply border-ink;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-paper font-medium px-5 py-3 rounded transition-colors;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 bg-ink hover:bg-ink-soft text-paper font-medium px-5 py-3 rounded transition-colors;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-ink text-ink hover:bg-ink hover:text-paper font-medium px-5 py-3 rounded transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 text-ink hover:text-brand-green font-medium transition-colors;
+  }
+  .input-base {
+    @apply w-full bg-paper border border-border-strong rounded px-4 py-3 text-text placeholder:text-text-subtle focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 focus:outline-none transition-colors;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-sm bg-paper-sunk text-text-muted border border-border;
+  }
+  .chip-green {
+    @apply inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-sm bg-brand-green-soft text-brand-green-dark;
+  }
+  .divider-h {
+    @apply h-px bg-border;
+  }
+  .prose-article {
+    @apply max-w-prose-article text-[1.05rem] leading-[1.8];
+  }
+  .prose-article h2 {
+    @apply text-2xl mt-10 mb-4;
+  }
+  .prose-article h3 {
+    @apply text-xl mt-8 mb-3;
+  }
+  .prose-article p {
+    @apply my-5 text-text;
+  }
+  .prose-article ul {
+    @apply my-5 pl-5 list-disc space-y-2;
+  }
+  .prose-article ol {
+    @apply my-5 pl-5 list-decimal space-y-2;
+  }
+  .prose-article blockquote {
+    @apply border-l-2 border-brand-green pl-5 italic text-text-muted my-6;
+  }
+  .prose-article a {
+    @apply text-brand-green-dark underline underline-offset-4 decoration-brand-green/50 hover:decoration-brand-green;
+  }
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .border-grid {
+    background-image: linear-gradient(to right, #e5e5e1 1px, transparent 1px),
+      linear-gradient(to bottom, #e5e5e1 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
