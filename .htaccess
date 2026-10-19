@@ -1,0 +1,49 @@
+# CBDOS Coalition website — Apache config for Hostinger shared hosting
+# Serves a React single-page app with client-side routing from the subdomain
+# root (cbd.digiskills.live).
+
+Options -MultiViews
+RewriteEngine On
+
+# Serve existing files and directories as-is.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Any other request falls back to index.html so React Router can take over.
+RewriteRule ^ index.html [L]
+
+# ---- Compression ------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+    application/javascript application/json application/xml \
+    image/svg+xml application/x-font-ttf font/woff font/woff2
+</IfModule>
+
+# ---- Caching ----------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # HTML: short cache so updates roll out quickly.
+  ExpiresByType text/html "access plus 10 minutes"
+  # Hashed assets (JS/CSS from the build) can be cached aggressively.
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  # Images and fonts.
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ---- Security headers -------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ---- Error document ---------------------------------------------------------
+ErrorDocument 404 /index.html

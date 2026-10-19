@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 36" role="img" aria-label="DigiSkills Africa">
+  <style>
+    .wm{fill:#111;font:700 14px Poppins, Arial, sans-serif;letter-spacing:0.3px}
+    .wm-accent{fill:#138A36;font:700 14px Poppins, Arial, sans-serif}
+    .wm-sub{fill:#6A6A66;font:500 9px Poppins, Arial, sans-serif;letter-spacing:2.2px}
+  </style>
+  <g transform="translate(6 4)">
+    <rect width="22" height="22" rx="4" fill="#111"/>
+    <path d="M6 7 h10 v4 h-6 v2 h4 v4 h-8 z" fill="#138A36"/>
+  </g>
+  <g transform="translate(38 18)">
+    <text class="wm" x="0" y="0">Digi<tspan class="wm-accent">Skills</tspan> Africa</text>
+    <text class="wm-sub" x="2" y="12">WEBSITE DEVELOPMENT · DIGITAL CRAFT</text>
+  </g>
+</svg>
